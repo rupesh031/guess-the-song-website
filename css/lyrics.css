@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Assistant:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+.background_lyrics{
+    background: rgba(0,0,0,0.7) url('../images/pexels-photo-995301.jpeg');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.menu{
+    padding: 5px 0px;
+    margin-top: 60px;
+    width: 100%;
+    justify-content: center;
+    width: fit-content;
+    justify-self: center;
+    padding: 6px 20px;
+    font-size: 30px;
+}
+.heading{
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    margin-top: 64px;
+}
+
+/*game1.css*/

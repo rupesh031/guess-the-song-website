@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Guess The Song</title>
+</head>
+<body>
+    <nav class="navbar background nav_h">
+        <div class="burger ">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="navlist vclass"> 
+            <div class="logo resp">
+                <img src="images/pexels-photo-1046466.jpeg" alt="logo">
+            </div>
+            <li> <a href="#home">Home</a></li>
+            <li> <a href="#about">About</a></li>
+            <li> <a href="#contact">Contact</a></li>
+        </ul>
+        <div class="rightnav vclass">
+            <input type="text" name="search" id="search" placeholder="Find Your Dig"> 
+            <button class="btn ">Search</button>
+        </div>
+
+    </nav>
+
+    <section class="background firstSection " id="#home">
+        <div class="mainbox">
+            <div class="first">
+
+                
+                <button class="Btn GameIntro" onclick="location='lyrics.html'">Complete  the  Song  Lyrics</button>
+                <p class="text">A Song will play for 20 seconds and you will have to complete the "Lyrics" further.</p>
+
+
+            </div>
+            <div class="second">
+                <button class="Btn GameIntro"  onclick="location='game2.html'">Guess  the  Song</button>
+                <p class="text">A Song will play for 5 seconds and you will have to guess the name of Song and the Artist.</p>
+            </div>
+        </div>    
+        <div class="bottom ">
+            <div class="copyright">
+                Copyright &copy;2029 - All rights reserved.
+            </div>
+            <div class="icons">
+                <button id="youtube" class="Icon" onClick=document.location='https://www.youtube.com/channel/UCHdXfyxtexnDMxWr2YWUX0g'><img src="images/youtube-logo-png-2067.png" alt="youtube"/></button>
+                <button id="instagram" class="Icon i" onClick=document.location='https://www.instagram.com/rupesh.id/'><img src="images/logo-ig-png-32464.png" alt="instagram"/></button>
+                <button id="github" class="Icon g" onClick=document.location="https://github.com/rupesh031"><img src="images/512x512-logo-27148.png" alt="github" /></button>
+                
+            </div>
+           
+        </div>
+        
+    </section>
+    <script src="js/res.js">src</script>
+</body>
+</html>

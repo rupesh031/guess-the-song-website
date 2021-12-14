@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Guess The Song</title>
+</head>
+
+<body>
+    <nav class="navbar background nav_h">
+        <div class="burger ">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="navlist vclass">
+            <div class="logo resp">
+                <img src="images/pexels-photo-1046466.jpeg" alt="logo">
+            </div>
+            <li> <a href="#home">Home</a></li>
+            <li> <a href="#about">About</a></li>
+            <li> <a href="#contact">Contact</a></li>
+        </ul>
+        <div class="rightnav vclass">
+            <input type="text" name="search" id="search" placeholder="Find Your Dig">
+            <button class="btn ">Search</button>
+        </div>
+    </nav>
+    <div class="main background_lyrics" id="main">
+        <div class="hide">
+            <div class="top">
+                <div class="score" id="score">Score: 0</div>
+                <div class="question">
+                    <button class="que_btn"><img src="images/question-mark-10944.png" alt="help"></button>
+                </div>
+
+            </div>
+            <div class="level" id="level">LEVEL: 1</div>
+
+            <div class="player">
+                <div class="details">
+                    <div>
+                        <img id="art" class="track-art">
+                    </div>
+                    <div class="track-name" id="track-title">Track Name</div>
+                </div>
+                <div class="buttons">
+                    <div class="playpause-track" onclick="play_pause(0)">
+                        <iframe class="iframe" frameborder="0" id="video_player" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                        <img src="./images/icons8-play-64.png" alt="" id="playbtn">
+                    </div>
+                </div>
+                <div class="slider_container play_container">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider" id="dur" onchange="seekTo()">
+                    <div class="total-duration">00:30</div>
+                </div>
+            </div>
+
+            <div class="Lyrics_input">
+                <div class="field1">
+                    <input type="text" name="Take_Lyrics" id="Input_Lyrics" placeholder="Complete the Lyrics">
+                    <button class="score-btn btn" id="chk-btn">Check Score</button>
+                </div>
+
+                <div class="field2">
+                    <button class="next-btn btn" id="next-btn">Next</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/res.js" type="text/javascript"></script>
+    <script src="js/api.js" type="text/javascript"></script>
+    <script src="js/bundle.js" type="text/javascript"></script>
+    
+
+</body>
+
+</html>
