@@ -8,11 +8,13 @@ const format = (...args) => args.shift().replace(/%([jsd])/g, x => x === '%j' ? 
 document.getElementById("next-btn").disabled = true;
 var history=[]
 var iframe;
+playurl=localStorage.getItem("url")
+console.log(playurl)
 
 $(document).ready(function () {
 
   var key = "AIzaSyDr-RcaHQlkvIR7VvSjY54sAuOysRqQVaE";
-  var playlistId = 'PLhe7ZaTbaX31TnzOVudJeVh74SjPwG0lw';
+  var playlistId = playurl;
   var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
 
@@ -121,7 +123,7 @@ function play_pause(i = 0) {
   else {
     player_stat = true
     document.getElementById('playbtn').src = '../images/icons8-pause-60.png'
-    var dur = (sec + 30);
+    var dur = (sec + 60);
     if (sec != 0)
       dur -= 2
     Player.src += '&autoplay=1&mute=0&start=' + dur.toString()
@@ -182,14 +184,14 @@ function songname()
 function next_level()
 {
   level++
-if (level==2)
+if (level==5)
 {
   document.getElementById("next-btn").classList.add("gameOver");
   sc=document.createElement("script")
   sc.setAttribute("src","js/gif_b.js")
   document.body.appendChild(sc)
 }
-if(level<=2)
+if(level<=5)
 {
   document.getElementById("chk-btn").disabled=false
   document.getElementById("level").innerHTML="LEVEL: "+level.toString()

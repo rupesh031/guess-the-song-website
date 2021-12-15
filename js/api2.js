@@ -119,7 +119,7 @@ function play_pause(i = 0) {
   else {
     player_stat = true
     document.getElementById('playbtn').src = '../images/icons8-pause-60.png'
-    var dur = (sec + 40);
+    var dur = (sec + 60);
     if (sec != 0)
       dur -= 2
     Player.src += '&autoplay=1&mute=0&start=' + dur.toString()
@@ -180,13 +180,13 @@ function songname() {
 
 function next_level() {
   level++
-  if (level == 2) {
+  if (level == 5) {
     document.getElementById("next-btn").classList.add("gameOver");
     sc = document.createElement("script")
     sc.setAttribute("src", "js/gif_b.js")
     document.body.appendChild(sc)
   }
-  if (level <= 2) {
+  if (level <= 5) {
     document.getElementById("level").innerHTML = "LEVEL: " + level.toString()
     setPlayer(data1)
     sec = 0
