@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+
     <title>Guess The Song</title>
 </head>
+
 <body>
     <nav class="navbar background nav_h">
         <div class="burger ">
@@ -15,7 +18,7 @@
             <div class="line"></div>
         </div>
 
-        <ul class="navlist vclass"> 
+        <ul class="navlist vclass">
             <div class="logo resp">
                 <img src="images/pexels-photo-1046466.jpeg" alt="logo">
             </div>
@@ -23,28 +26,31 @@
             <li> <a href="#about" onclick="location='about.html'">About</a></li>
         </ul>
         <div class="rightnav vclass">
-            <input type="text" name="search" id="search" placeholder="Find Your Dig"> 
+            <input type="text" name="search" id="search" placeholder="Find Your Dig">
             <button class="btn ">Search</button>
         </div>
-
     </nav>
+    <div class="main background_lyrics" id="main">
 
-    <section class="background_lyrics firstSection " id="#home">
-        <div class="mainbox">
-            <div class="first">
+        <div class="heading">
+            <p>About</p>
+        </div>
+        <p class="new_text"> This website contains two games</p>
 
-                
-                <button class="Btn GameIntro" onclick="location='lyrics.html'">Complete  the  Song  Lyrics</button>
-                <p class="text">A Song will play for 30 seconds and you will have to complete the "Lyrics" further.</p>
-
-
-            </div>
-            <div class="second">
-                <button class="Btn GameIntro"  onclick="location='game2.html'">Guess  the  Song</button>
-                <p class="text">A Song will play for 10 seconds and you will have to guess the name of Song and the Artist.</p>
-            </div>
-        </div>    
-        <div class="bottom">
+        <div class="game_inst">
+            <p class="heading">1.Complete The Lyrics <br></p>
+            <p class="long">Type lyrics from any line in the song.The lines following each other don't need to be consecutive.<br></p>
+            <p class="long">After Completing You can check your score.Once you check your score the next button will be enabled for
+                the next level<br></p>
+            <p class="long">(You should not use any punctuation mark other than "full stop(.)")<br></p>
+        </div>
+        <div class="game_inst">
+            <p class="heading">2.Guess The Song</p>
+            <p class="long">Type the Song name followed by Artist name in the format "Track Name-Artist Name".</p>
+            <p class="long">After Completing You can check your score.Once you check your score the next button will be enabled for
+                the next level</p>
+        </div>
+        <div class="bottom ">
             <div class="copyright">
                 Copyright &copy;2029 - All rights reserved.
             </div>
@@ -56,8 +62,9 @@
             </div>
            
         </div>
-        
-    </section>
-    <script src="js/res.js">src</script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/res.js" type="text/javascript"></script>
 </body>
+
 </html>
