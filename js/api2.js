@@ -119,7 +119,7 @@ function play_pause(i = 0) {
   else {
     player_stat = true
     document.getElementById('playbtn').src = '../images/icons8-pause-60.png'
-    var dur = (sec + 60);
+    var dur = (sec + 40);
     if (sec != 0)
       dur -= 2
     Player.src += '&autoplay=1&mute=0&start=' + dur.toString()
