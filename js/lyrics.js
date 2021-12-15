@@ -31,7 +31,7 @@ function call_lyrics() {
         console.log(song)
 
         const options = {
-            url: 'https://genius.com/api/search/multi?per_page=3&q=' + song,
+            url: 'https://shielded-chamber-55758.herokuapp.com/https://genius.com/api/search/multi?per_page=3&q=' + song,
             json: true
         }
 
@@ -40,7 +40,7 @@ function call_lyrics() {
                 let userData = [];
                 console.log(data)
                 url1 = data.response.sections[1].hits[0].result.url
-                axios.get(url1)
+                axios.get("https://shielded-chamber-55758.herokuapp.com/"+url1)
                     .then((response) => {
                         const html = response.data;
                         const $ = cheerio.load(html);

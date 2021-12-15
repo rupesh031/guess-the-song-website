@@ -3,13 +3,13 @@ document.getElementsByClassName("gameOver")[0].addEventListener("click", get_url
 remark = ""
 function get_url() {
     if (score < 150) {
-        remark = "pathetic"
+        remark = "loser"
     }
     else if (score >= 150 && score < 400) {
         remark = "average"
     }
     else if (score >= 400 && score < 800) {
-        remark = "respectable"
+        remark = "excellent"
     }
     else {
         remark = "legendary"
