@@ -28,7 +28,6 @@ function call_lyrics() {
             song = arr[1] + arr[0]
         }
 
-        console.log(song)
 
         const options = {
             url: 'https://shielded-chamber-55758.herokuapp.com/https://genius.com/api/search/multi?per_page=3&q=' + song,
@@ -37,8 +36,7 @@ function call_lyrics() {
 
         rp(options)
             .then((data) => {
-                let userData = [];
-                console.log(data)
+            
                 url1 = data.response.sections[1].hits[0].result.url
                 axios.get("https://shielded-chamber-55758.herokuapp.com/"+url1)
                     .then((response) => {
@@ -67,14 +65,12 @@ function call_lyrics() {
         {
             if (lyrics.charAt(i)=="," || lyrics.charAt(i)=="?")
             {
-                console.log("comma")
                 lyrics=lyrics.slice(0,i)+lyrics.slice(i+1,lyrics.length)
                 i--
             }
             if(lyrics.charAt(i)=="\'")
             {
                 short=lyrics.charAt(i+1)
-                console.log(short)
                 to_skip=1
                 long=" word"
                 if (short=="m")
@@ -124,7 +120,6 @@ function call_lyrics() {
             i++;
         }
         lyrics=lyrics.toLowerCase()
-        console.log(lyrics)
         input_field=document.getElementById("Input_Lyrics")
         input_lyrics=(input_field.value+".").toLowerCase()
         input_list=input_lyrics.split(".")

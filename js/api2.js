@@ -10,6 +10,8 @@ const format = (...args) => args.shift().replace(/%([jsd])/g, x => x === '%j' ? 
 document.getElementById("next-btn").disabled = true;
 score = 0
 history = []
+var videoid;
+
 
 $(document).ready(function () {
 
@@ -31,7 +33,6 @@ $(document).ready(function () {
     $.getJSON(URL, options, function (data) {
       var id = data.items[0].snippet.resourceId.videoId;
       //mainVid(id);
-      console.log(data)
       setPlayer(data)
       //resultsLoop(data);
     });
@@ -91,28 +92,32 @@ async function setPlayer(data) {
     j++
   }
   history[history.length] = i
-  console.log(data.items.length)
-  console.log(history)
   var item = data.items[i]
   thumb = item.snippet.thumbnails.medium.url;
   title = item.snippet.title;
   art_link = thumb
   ab = title
-  audio(item.snippet.resourceId.videoId)
+  videoid=item.snippet.resourceId.videoId
   songready = true;
+  if (level!=1)
+  {
+    load(videoid)
+  }
 }
 
+
 function play_pause(i = 0) {
-  var Player = document.getElementById('video_player');
+  /*var Player = document.getElementById('video_player');
   var playY;
-  console.log(Player.src)
+  console.log(Player.src)*/
   if (player_stat) {
     player_stat = false
     document.getElementById('playbtn').src = '../images/icons8-play-64.png'
-    x = Player.src.slice(0, -27);
+    /*x = Player.src.slice(0, -27);
     Player.src = x;
-    console.log(Player.src)
+    console.log(Player.src)*/
     start = false;
+    pause()
     if (i == 0)
       timer()
   }
@@ -122,9 +127,11 @@ function play_pause(i = 0) {
     var dur = (sec + 40);
     if (sec != 0)
       dur -= 2
-    Player.src += '&autoplay=1&mute=0&start=' + dur.toString()
-    console.log(Player.src)
+    /*Player.src += '&autoplay=1&mute=0&start=' + dur.toString()
+    console.log(Player.src)*/
     start = true;
+    seek(dur+2)
+    play()
     if (i == 0)
       timer()
   }
@@ -137,9 +144,9 @@ function audio(id) {
   audio_el.src="https://www.youtube.com/watch?v="+id
   audio_el.play()
   */
-  console.log(id)
+  /*console.log(id)
   var video_el = document.getElementById("video_player");
-  video_el.src = "https://www.youtube.com/embed/" + id + "?enablejsapi=1&&origin=http://127.0.0.1:5500";
+  video_el.src = "https://www.youtube.com/embed/" + id + "?enablejsapi=1&&origin=http://127.0.0.1:5500";*/
 
 }
 
@@ -154,7 +161,7 @@ function timer() {
     dur_slider = document.getElementById("dur")
     dur_slider.value = ((sec - 1) / 10) * 100
     if (sec > 10) {
-      console
+      
       sec = 0
       start = false
       player_stat = true
@@ -169,9 +176,10 @@ function seekTo() {
   dur_slider = document.getElementById("dur")
   dur_slider.value = Math.round(dur_slider.value)
   sec = Math.round((dur_slider.value / 100) * 10);
-  console.log(sec)
+  seek(60+sec)
+  /*console.log(sec)
   play_pause(1)
-  play_pause(1)
+  play_pause(1)*/
 }
 
 function songname() {
@@ -217,18 +225,17 @@ function getScore() {
   img = document.getElementById("art")
   img.src = thumb;
   document.getElementById("track-title").innerHTML = ab;
-  console.log("title")
-  console.log(ab)
+ 
   input_title = document.getElementById("Input_title").value + "-"
   input_title = input_title.split("-")
-  console.log(input_title)
+ 
   document.getElementById("next-btn").disabled = false;
 
   if (ab.toLowerCase().indexOf((input_title[0].trim().toLowerCase())) >= 0 && input_title[0] != "")
     score += 50
   if (ab.toLowerCase().indexOf(input_title[1].trim().toLowerCase()) >= 0 && input_title[1] != "")
     score += 50
-  console.log(score)
+ 
   document.getElementById("score").innerText = "Score: " + score.toString()
 
 }
@@ -269,4 +276,9 @@ function style_div(div1) {
   div1.style.fontFamily = "serif"
   div1.style.textAlign = "center"
   div1.style.margin = "20px 0px"
+}
+
+function get_id()
+{
+  return videoid;
 }

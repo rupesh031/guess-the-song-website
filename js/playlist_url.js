@@ -26,7 +26,6 @@ catch(err)
 
 function assign_url(mode)
 {
-    console.log(mode)
     if (mode=="edm")
     {
         mode_url=edm[Math.round(Math.random()*(edm.length-1))]
@@ -56,6 +55,5 @@ function assign_url(mode)
         mode_url=band[Math.round(Math.random()*(band.length-1))]
     }
     localStorage.setItem("url",mode_url);
-    console.log(mode_url)
 }
  
